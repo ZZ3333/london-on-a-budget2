@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const signupButton = () => {
+const SignupButton = () => {
     return (
         <div>
             <a href="/signup">
@@ -10,4 +10,4 @@ const signupButton = () => {
     )
 }
 
-export default signupButton;
+export default SignupButton;

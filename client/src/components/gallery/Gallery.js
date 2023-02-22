@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const galleryComponent = () => {
+const Gallery = () => {
   return (
     <div>
       <h2></h2>
@@ -10,4 +10,4 @@ const galleryComponent = () => {
   );
 };
 
-export default galleryComponent;
+export default Gallery;
