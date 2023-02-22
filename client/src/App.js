@@ -1,13 +1,25 @@
 import React from 'react';
 import './App.css';
 import SearchBar from './components/searchbar/SearchBar';
+import EventsGallery from './components/eventsgallery/EventsGallery';
+import IconsBar from './components/iconsbar/IconsBar';
+import Main from './components/main/Main';
 
 function App() {
   return (
-    <div>
-      <h1>London on a Budget</h1>
-      <SearchBar />
-    </div>
+    <html>
+      <head>
+        <title>London on a Budget</title>
+      </head>
+      <body>
+        <div>
+          <h1>London on a Budget</h1>
+          <SearchBar />
+          <IconsBar />
+          <EventsGallery />
+        </div>
+      </body>
+    </html>
   );
 }
 
