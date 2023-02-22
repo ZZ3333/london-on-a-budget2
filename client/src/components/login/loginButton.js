@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const loginButton = () => {
+const LoginButton = () => {
     return (
         <div>
             <a href="/login">
@@ -11,7 +11,7 @@ const loginButton = () => {
     )
 }
 
-export default loginButton;
+export default LoginButton;
 
 
 

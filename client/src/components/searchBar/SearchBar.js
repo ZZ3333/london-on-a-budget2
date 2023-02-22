@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
-import "./SearchBar.css";
+
+// const axios = require("axios")
+// import "./SearchBar.css";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -9,13 +10,13 @@ const SearchBar = () => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios.get("url");
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+    // event.preventDefault();
+    // try {
+    //   const response = await axios.get("url");
+    //   console.log(response.data);
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
   return (
     <div>

@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import React, { useState } from "react"
 import './App.css';
+import Gallery from '../gallery/Gallery.js';
+import Icons from '../icons/Icons.js';
+import LoginButton from '../login/LoginButton.js';
+import SearchBar from '../searchBar/SearchBar.js';
+import SignupButton from '../signup/SignupButton.js';
+import {
+  useNavigate,
+  Routes,
+  Route
+} from "react-router-dom";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Routes>
+    <Route path="/" element={<LoginButton navigate={useNavigate()} />} />
+    <Route path="/" element={<SignupButton navigate={useNavigate()} />} />
+    <Route path="/" element={<SearchBar navigate={useNavigate()} />} />
+    <Route path="/" element={<Icons navigate={useNavigate()} />} />
+    <Route path="/" element={<Gallery navigate={useNavigate()} />} />
+    </Routes>
   );
 }
 
