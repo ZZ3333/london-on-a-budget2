@@ -3,7 +3,6 @@ import './App.css';
 import SearchBar from './components/searchbar/SearchBar';
 import EventsGallery from './components/eventsgallery/EventsGallery';
 import IconsBar from './components/iconsbar/IconsBar';
-import Main from './components/main/Main';
 
 function App() {
   return (
