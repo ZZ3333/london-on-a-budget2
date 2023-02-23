@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
-
-const EventsGallery = () => {
+const EventsView = () => {
   return (
     <div>
       <h5>Gallery</h5>
@@ -10,4 +9,4 @@ const EventsGallery = () => {
   );
 };
 
-export default EventsGallery;
+export default EventsView;

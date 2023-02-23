@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
+const Search = () => {
+  const [query, setQuery] = useState("");
 
-const SearchBar = () =>{
-  const [query, setQuery] = useState('');
-
-  const handleInputChange = (event) =>{
+  const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleSubmit = (event) =>{
+  const handleSubmit = (event) => {
     event.preventDefault();
   };
   return (
@@ -19,4 +18,4 @@ const SearchBar = () =>{
   );
 };
 
-export default SearchBar;
+export default Search;

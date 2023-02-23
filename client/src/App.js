@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import SearchBar from './components/searchBar/SearchBar';
-import EventsGallery from './components/eventsGallery/EventsGallery';
-import IconsBar from './components/iconsBar/IconsBar';
+import './index.css';
+import Search from './components/Search/Search';
+import EventsView from './components/EventsView/EventsView';
+import IconsMenu from './components/IconsMenu/IconsMenu';
 
 function App() {
   return (
@@ -11,11 +12,11 @@ function App() {
         <title>London on a Budget</title>
       </head>
       <body>
-        <div>
+        <div class="landing-page">
           <h1>London on a Budget</h1>
-          <SearchBar />
-          <IconsBar />
-          <EventsGallery />
+          <Search />
+          <IconsMenu />
+          <EventsView />
         </div>
       </body>
     </html>
