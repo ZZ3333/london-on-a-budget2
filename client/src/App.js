@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import SearchBar from './components/searchbar/SearchBar';
-import EventsGallery from './components/eventsgallery/EventsGallery';
-import IconsBar from './components/iconsbar/IconsBar';
+import SearchBar from './components/searchBar/SearchBar';
+import EventsGallery from './components/eventsGallery/EventsGallery';
+import IconsBar from './components/iconsBar/IconsBar';
 
 function App() {
   return (
