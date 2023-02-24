@@ -60,16 +60,16 @@ app.use((err, req, res) => {
 });
 
 
-axios
-  .get(
-    "https://app.ticketmaster.com/discovery/v2/events?apikey=ENTERKEYHETE&keyword=free&locale=*&city=London&countryCode=GB",
-  )
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+// axios
+//   .get(
+//     "https://app.ticketmaster.com/discovery/v2/events?apikey=ENTERKEYHETE&keyword=free&locale=*&city=London&countryCode=GB",
+//   )
+//   .then((response) => {
+//     console.log(response.data);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
   
   
 module.exports = app;

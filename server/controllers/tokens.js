@@ -1,4 +1,4 @@
-const User = require("../models/users");
+const User = require("../models/user");
 const TokenGenerator = require("../models/token_generator");
 
 const SessionsController = {
