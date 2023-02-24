@@ -80,5 +80,13 @@ describe("Event model", () => {
      expect(event.price).toEqual(123);
      expect(typeof event.price).toBe("number");
    });
+     it("Takes a bool value for age restriction", () => {
+       const event = new Event({
+         legalAgeRestriction: true,
+       });
+       expect(event.legalAgeRestriction).toBeDefined();
+       expect(event.legalAgeRestriction).toBeTruthy();
+       expect(typeof event.legalAgeRestriction).toBe("boolean");
+     });
 
 });
