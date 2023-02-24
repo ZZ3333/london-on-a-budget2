@@ -82,7 +82,9 @@ describe("/users", () => {
         firstName: "firstName",
         lastName: "lastName",
       });
-      let response = await request(app).get("/users").query({ email: "someone@example.com" });
+      let response = await request(app)
+        .get("/users")
+        .query({ email: "someone@example.com" });
       expect(response.statusCode).toBe(201);
       expect(response.body.user.email).toEqual("someone@example.com");
       expect(response.body.user.firstName).toEqual("firstName");
@@ -97,7 +99,9 @@ describe("/users", () => {
       firstName: "firstName",
       lastName: "lastName",
     });
-    let response = await request(app).get("/users").query({ email: "someon@example.com" });
+    let response = await request(app)
+      .get("/users")
+      .query({ email: "someon@example.com" });
     expect(response.statusCode).toBe(404);
   });
 });
