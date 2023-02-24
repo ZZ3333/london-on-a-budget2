@@ -22,12 +22,19 @@ describe("Event model", () => {
     expect(event.name).toBeDefined();
     expect(event.name).toEqual("testEvent");
   });
-  it("has a a description", () => {
+  it("has a description", () => {
     const event = new Event({
       description: "this is a test event",
     });
     expect(event.description).toBeDefined();
     expect(event.description).toEqual("this is a test event");
+  });
+  it("has a genre", () => {
+    const event = new Event({
+      genre: "tech",
+    });
+    expect(event.genre).toBeDefined();
+    expect(event.genre).toEqual("tech");
   });
 
 });
