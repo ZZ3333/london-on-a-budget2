@@ -85,4 +85,44 @@ describe("/users", () => {
       expect(users.length).toEqual(0);
     });
   });
-});
+
+  describe("Find user by email", () => {
+    test("find user by email", async() => {
+     await request(app).post("/users").send({
+          email: "poppy@email.com",
+          password: "1234",
+          firstName: "Poppy",
+          lastName: "Allen",
+      })
+     const response = await request(app)
+      .get("/users")
+      .query({ email: "poppy@email.com" });
+      expect(response.statusCode).toBe(201)
+      expect(response.body.users.email).toEqual("poppy@email.com");
+      expect(response.body.users.firstName).toEqual("Poppy");
+      expect(response.body.users.lastName).toEqual("Allen");
+    })
+    })
+  })
+
+
+  // describe("GET, a user by _id", () => {
+  //   test("it finds a user", async () => {
+  //     let response = await request(app)
+  //     .post("/users")
+  //     .send({
+  //         email: "poppy@email.com",
+  //         password: "1234",
+  //         firstName: "Poppy",
+  //         lastName: "Allen",
+  //         _id: 1234
+  //     })
+  //     expect(response.statusCode).toBe(201);
+
+  //     let response2 = await request(app)
+  //     .get("/users")
+  //     .send({
+  //       _id: 1234
+  //     })
+
+  //     expect(response.statusCode).toBe(201)
