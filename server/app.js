@@ -1,8 +1,11 @@
+
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const JWT = require("jsonwebtoken");
+const axios = require("axios");
+const router = express.Router();
 
 const tokensRouter = require("./routes/tokens");
 const usersRouter = require("./routes/users");
@@ -56,4 +59,18 @@ app.use((err, req, res) => {
   res.status(err.status || 500).json({message: 'server error'})
 });
 
+
+axios
+  .get(
+    "https://app.ticketmaster.com/discovery/v2/events?apikey=ENTERKEYHETE&keyword=free&locale=*&city=London&countryCode=GB",
+  )
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+  
+  
 module.exports = app;
+

@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import SearchBar from './components/searchBar/SearchBar';
+import EventsGallery from './components/eventsGallery/EventsGallery';
+import IconsBar from './components/iconsBar/IconsBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <html>
+      <head>
+        <title>London on a Budget</title>
+      </head>
+      <body>
+        <div>
+          <h1>London on a Budget</h1>
+          <SearchBar />
+          <IconsBar />
+          <EventsGallery />
+        </div>
+      </body>
+    </html>
   );
 }
 
