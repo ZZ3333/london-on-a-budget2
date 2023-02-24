@@ -72,5 +72,13 @@ describe("Event model", () => {
     expect(event.addressLine).toEqual("123 Testing Way");
     expect(typeof event.addressLine).toBe("string");
   });
+    it("has an entry price", () => {
+     const event = new Event({
+       price: 123,
+     });
+     expect(event.price).toBeDefined();
+     expect(event.price).toEqual(123);
+     expect(typeof event.price).toBe("number");
+   });
 
 });
