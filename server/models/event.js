@@ -17,19 +17,19 @@ const EventSchema = new mongoose.Schema({
       image: {
         type: String
       },
-      start_datetime: { 
+      startDateTime: { 
         type: Date
       },
-      postal_code: {
+      postcode: {
         type: String
       },
-      address_line_one: {
+      addressLine: {
         type: String
       },
       price: {
-        type: Integer
+        type: Number
       },
-      legal_age_restriction: {
+      legalAgeRestriction: {
         type: Boolean
       }
 
