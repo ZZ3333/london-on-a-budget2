@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const Event = require('../models/event');
-
+const db = require('../db');
 
 //const apikey = process.env.API_KEY
 
@@ -11,7 +11,7 @@ const Event = require('../models/event');
 async function addEvent() {
   try {
     const response = await axios.get(
-      "https://app.ticketmaster.com/discovery/v2/events?apikey=GET API KEY FROM DOT ENV AND PLACE HERE&locale=*&size=10&city=London&countryCode=GB"
+      "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&size=10&city=London&countryCode=GB"
     );
     const events = response.data._embedded.events.map((event) =>{
       return{
@@ -24,7 +24,11 @@ async function addEvent() {
   }catch (error){
     console.error(error);
   }
+
 };
+
+    
+newEvent();
 
 module.exports = addEvent;
 
