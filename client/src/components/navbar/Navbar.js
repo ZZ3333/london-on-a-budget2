@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import './Navbar.css';
-import
 
 const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');
