@@ -56,5 +56,13 @@ describe("Event model", () => {
      expect(event.image).toEqual("data:image/png;base64,AbcDEf");
      expect(typeof event.image).toBe("string");
    });
+  it("has a postcode", () => {
+    const event = new Event({
+      postcode: "AB1 1CD",
+    });
+    expect(event.postcode).toBeDefined();
+    expect(event.postcode).toEqual("AB1 1CD");
+    expect(typeof event.postcode).toBe("string");
+  });
 
 });
