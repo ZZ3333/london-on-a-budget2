@@ -22,5 +22,12 @@ describe("Event model", () => {
     expect(event.name).toBeDefined();
     expect(event.name).toEqual("testEvent");
   });
+  it("has a a description", () => {
+    const event = new Event({
+      description: "this is a test event",
+    });
+    expect(event.description).toBeDefined();
+    expect(event.description).toEqual("this is a test event");
+  });
 
 });
