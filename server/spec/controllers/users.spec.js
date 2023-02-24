@@ -1,7 +1,7 @@
 const app = require("../../app");
 const request = require("supertest");
 require("../mongodb_helper");
-const User = require("../../models/users");
+const User = require("../../models/user");
 
 describe("/users", () => {
   beforeEach(async () => {

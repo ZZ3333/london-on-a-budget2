@@ -27,7 +27,7 @@ const EventSchema = new mongoose.Schema({
         type: String
       },
       price: {
-        type: Integer
+        type: Number
       },
       legal_age_restriction: {
         type: Boolean
