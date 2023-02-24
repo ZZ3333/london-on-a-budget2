@@ -64,5 +64,13 @@ describe("Event model", () => {
     expect(event.postcode).toEqual("AB1 1CD");
     expect(typeof event.postcode).toBe("string");
   });
+  it("has an address line", () => {
+    const event = new Event({
+      addressLine: "123 Testing Way",
+    });
+    expect(event.addressLine).toBeDefined();
+    expect(event.addressLine).toEqual("123 Testing Way");
+    expect(typeof event.addressLine).toBe("string");
+  });
 
 });

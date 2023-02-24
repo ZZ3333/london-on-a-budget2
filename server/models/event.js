@@ -23,13 +23,13 @@ const EventSchema = new mongoose.Schema({
       postcode: {
         type: String
       },
-      address_line_one: {
+      addressLine: {
         type: String
       },
       price: {
         type: Number
       },
-      legal_age_restriction: {
+      legalAgeRestriction: {
         type: Boolean
       }
 
