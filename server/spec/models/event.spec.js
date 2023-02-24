@@ -21,6 +21,7 @@ describe("Event model", () => {
     });
     expect(event.name).toBeDefined();
     expect(event.name).toEqual("testEvent");
+    expect(typeof event.name).toBe("string");
   });
   it("has a description", () => {
     const event = new Event({
@@ -28,6 +29,8 @@ describe("Event model", () => {
     });
     expect(event.description).toBeDefined();
     expect(event.description).toEqual("this is a test event");
+    expect(typeof event.description).toBe("string");
+
   });
   it("has a genre", () => {
     const event = new Event({
@@ -35,6 +38,7 @@ describe("Event model", () => {
     });
     expect(event.genre).toBeDefined();
     expect(event.genre).toEqual("tech");
+    expect(typeof event.genre).toBe("string");
   });
    it("has a URL", () => {
      const event = new Event({
