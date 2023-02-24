@@ -33,19 +33,5 @@ function App() {
   );
 }
 
-// const App = () => {
-//   return (
-//     <Routes>
-//       <Route path="/" element={<Feed navigate={useNavigate()} />} />
-//       <Route path="/login" element={<LoginForm navigate={useNavigate()} />} />
-//       <Route
-//         path="/signup"
-//         element={<SignUpForm navigate={useNavigate()} />}
-//       />
-//       {/* <Route path="/" element={<Navbar navigate={useNavigate()} />} />
-//       <Route path="/user/:id" element={<Profile navigate={useNavigate()} />} /> */}
-//     </Routes>
-//   );
-// }
 
 export default App;
