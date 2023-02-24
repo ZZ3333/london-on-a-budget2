@@ -36,5 +36,13 @@ describe("Event model", () => {
     expect(event.genre).toBeDefined();
     expect(event.genre).toEqual("tech");
   });
+   it("has a URL", () => {
+     const event = new Event({
+       URL: "www.testevent.spec",
+     });
+     expect(event.URL).toBeDefined();
+     expect(event.URL).toEqual("www.testevent.spec");
+     expect(typeof event.URL).toBe('string')
+   });
 
 });
