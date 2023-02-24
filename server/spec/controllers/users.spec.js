@@ -13,10 +13,10 @@ describe("/users", () => {
       let response = await request(app)
         .post("/users")
         .send({
-          email: "poppy@email.com",
+          email: "someone@example.com",
           password: "1234",
-          firstName: "Poppy",
-          lastName: "Allen",
+          firstName: "firstName",
+          lastName: "lastName",
         });
       expect(response.statusCode).toBe(201);
     });
@@ -25,14 +25,14 @@ describe("/users", () => {
       await request(app)
         .post("/users")
         .send({
-          email: "scarlett@email.com",
+          email: "someone@example.com",
           password: "1234",
-          firstName: "Scarlett",
-          lastName: "Davies",
+          firstName: "firstName",
+          lastName: "lastName",
         });
       let users = await User.find();
       let newUser = users[users.length - 1];
-      expect(newUser.email).toEqual("scarlett@email.com");
+      expect(newUser.email).toEqual("someone@example.com");
     });
   });
 
@@ -41,9 +41,9 @@ describe("/users", () => {
       let response = await request(app)
         .post("/users")
         .send({
-          email: "skye@email.com",
-          firstName: "Skye",
-          lastName: "Bishop",
+          email: "someone@example.com",
+          firstName: "firstName",
+          lastName: "lastName",
         });
       expect(response.statusCode).toBe(400);
     });
@@ -52,9 +52,9 @@ describe("/users", () => {
       await request(app)
         .post("/users")
         .send({
-          email: "skye@email.com",
-          firstName: "Skye",
-          lastName: "Bishop",
+          email: "someone@example.com",
+          firstName: "firstName",
+          lastName: "lastName",
         });
       let users = await User.find();
       expect(users.length).toEqual(0);
@@ -89,19 +89,19 @@ describe("/users", () => {
   describe("Find user by email", () => {
     test("find user by email", async() => {
      await request(app).post("/users").send({
-          email: "poppy@email.com",
-          password: "1234",
-          firstName: "Poppy",
-          lastName: "Allen",
+          email: "someone@example.com",
+          password: "password",
+          firstName: "firstName",
+          lastName: "lastName",
       })
-     const response = await request(app)
+      let response = await request(app)
       .get("/users")
-      .query({ email: "poppy@email.com" });
+      .query({ email: "someone@example.com" });
       expect(response.statusCode).toBe(201)
-      expect(response.body.users.email).toEqual("poppy@email.com");
-      expect(response.body.users.firstName).toEqual("Poppy");
-      expect(response.body.users.lastName).toEqual("Allen");
-    })
+      expect(response.body.user.email).toEqual("someone@example.com");
+      expect(response.body.user.firstName).toEqual("firstName");
+      expect(response.body.user.lastName).toEqual("lastName");
+      })
     })
   })
 
@@ -111,9 +111,9 @@ describe("/users", () => {
   //     let response = await request(app)
   //     .post("/users")
   //     .send({
-  //         email: "poppy@email.com",
+  //         email: "firstName@email.com",
   //         password: "1234",
-  //         firstName: "Poppy",
+  //         firstName: "firstName",
   //         lastName: "Allen",
   //         _id: 1234
   //     })
