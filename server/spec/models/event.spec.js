@@ -48,5 +48,13 @@ describe("Event model", () => {
      expect(event.URL).toEqual("www.testevent.spec");
      expect(typeof event.URL).toBe('string')
    });
+   it("has an image", () => {
+     const event = new Event({
+       image: "data:image/png;base64,AbcDEf",
+     });
+     expect(event.image).toBeDefined();
+     expect(event.image).toEqual("data:image/png;base64,AbcDEf");
+     expect(typeof event.image).toBe("string");
+   });
 
 });
