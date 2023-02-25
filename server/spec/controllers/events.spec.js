@@ -1,18 +1,9 @@
 const addEvent = require("../../controllers/events");
 const mongoose = require("mongoose");
 const Event = require("../../models/event");
+require("../mongodb_helper");
 
 describe("addEvents", () => {
-  beforeAll(async () => {
-    await mongoose.connect("mongodb://localhost/london_budget_test", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-  });
-
-  afterAll(async () => {
-    await mongoose.connection.close();
-  });
 
   beforeEach(async () => {
     await Event.deleteMany({});

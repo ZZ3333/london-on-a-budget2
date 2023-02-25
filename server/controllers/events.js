@@ -1,7 +1,7 @@
-require('dotenv').config();
+
 const axios = require('axios');
 const Event = require('../models/event');
-const db = require('../db');
+
 
 //const apikey = process.env.API_KEY
 
@@ -27,8 +27,7 @@ async function addEvent() {
 
 };
 
-    
-newEvent();
+  
 
 module.exports = addEvent;
 
