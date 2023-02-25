@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const JWT = require("jsonwebtoken");
+const axios = require("axios");
+const router = express.Router();
 
 const app = express();
 
@@ -37,6 +39,8 @@ const tokenChecker = (req, res, next) => {
 };
 
 // route setup
+app.use("/tokens", tokensRouter);
+app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
