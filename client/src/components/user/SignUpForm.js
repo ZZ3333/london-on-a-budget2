@@ -51,7 +51,7 @@ const SignUpForm = ({ navigate }) => {
     <form onSubmit={handleSubmit}>
       <input
         placeholder="Email"
-        id="email"
+        data-testid="email"
         type="text"
         value={email}
         onChange={handleEmailChange}

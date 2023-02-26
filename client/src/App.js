@@ -12,7 +12,7 @@ function App() {
   return (
     <html>
       <head>
-        <title>London on a Budget</title>
+        <title>Learn react</title>
       </head>
       <body>
         <div class="landing-page">
@@ -20,6 +20,8 @@ function App() {
           <Search />
           <IconsMenu />
           <EventsView />
+          <SignUpForm />
+          
         </div>
       </body>
     </html>
