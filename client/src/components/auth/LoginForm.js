@@ -37,9 +37,9 @@ const LogInForm = ({ navigate }) => {
 
     return (
       <form onSubmit={handleSubmit}>
-        <input placeholder='Email' id="email" type='text' value={ email } onChange={handleEmailChange} />
-        <input placeholder='Password' id="password" type='password' value={ password } onChange={handlePasswordChange} />
-        <input role='submit-button' id='submit' type="submit" value="Submit" />
+        <input placeholder='Email' data-testid="email" type='text' value={ email } onChange={handleEmailChange} />
+        <input placeholder='Password' data-testid="password" type='password' value={ password } onChange={handlePasswordChange} />
+        <input role='submit-button' data-testid='submit' type="submit" value="Submit" />
       </form>
     );
 }
