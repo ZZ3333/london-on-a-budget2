@@ -7,11 +7,11 @@ test ('should render LoginForm email component', () => {
     expect(LoginElement).toBeInTheDocument();
 })
 
-// test ('should render Signup password component', () => {
-//     render(<SignUpForm/>);
-//     const SignUpElement = screen.getByTestId('password');
-//     expect(SignUpElement).toBeInTheDocument();
-// })
+test ('should render LoginForm password component', () => {
+    render(<LogInForm/>);
+    const SignUpElement = screen.getByTestId('password');
+    expect(SignUpElement).toBeInTheDocument();
+})
 
 // test ('should render Signup firstName component', () => {
 //     render(<SignUpForm/>);
