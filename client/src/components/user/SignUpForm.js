@@ -51,28 +51,28 @@ const SignUpForm = ({ navigate }) => {
     <form onSubmit={handleSubmit}>
       <input
         placeholder="Email"
-        id="email"
+        data-testid="email"
         type="text"
         value={email}
         onChange={handleEmailChange}
       />
       <input
         placeholder="Password"
-        id="password"
+        data-testid="password"
         type="password"
         value={password}
         onChange={handlePasswordChange}
       />
       <input
         placeholder="First Name"
-        id="firstName"
+        data-testid="firstName"
         type="text"
         value={firstName}
         onChange={handleFirstNameChange}
       />
       <input
         placeholder="Last Name"
-        id="lastName"
+        data-testid="lastName"
         type="text"
         value={lastName}
         onChange={handleLastNameChange}

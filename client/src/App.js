@@ -7,19 +7,23 @@ import IconsMenu from './components/IconsMenu/IconsMenu';
 import Navbar from './components/navbar/Navbar';
 // import LoginForm from '../auth/LoginForm';
 import SignUpForm from './components/user/SignUpForm';
+import LogInForm from './components/auth/LoginForm';
 
 function App() {
   return (
     <html>
       <head>
-        <title>London on a Budget</title>
+        <title>Learn react</title>
       </head>
       <body>
-        <div class="landing-page">
+        <div className="landing-page">
           <h1>London on a Budget</h1>
           <Search />
           <IconsMenu />
           <EventsView />
+          <SignUpForm />
+          <LogInForm />
+          
         </div>
       </body>
     </html>
