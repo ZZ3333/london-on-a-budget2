@@ -7,8 +7,8 @@ test ('should render IconsMenu music icon component', () => {
     const IconsMenuElement = screen.getByTestId('music');
     expect(IconsMenuElement).toBeInTheDocument();
 })
-// test ('should render IconsMenu sports icon component', () => {
-//     render(<IconsMenu/>);
-//     const IconsMenuElement = screen.getByTestId('sports');
-//     expect(IconsMenuElement).toBeInTheDocument();
-// })
+test ('should render IconsMenu sports icon component', () => {
+    render(<IconsMenu/>);
+    const IconsMenuElement = screen.getByTestId('sports');
+    expect(IconsMenuElement).toBeInTheDocument();
+})
