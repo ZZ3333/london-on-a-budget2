@@ -5,12 +5,15 @@ const IconsMenu = () => {
     <div>
       <a href="/music">
         <button type="submit">
+          <span data-testid="music"></span>
           <i class="bi bi-music-note-beamed"></i>
-        </button>
+        </button>        
       </a>
       <a href="/sports">
-        <button type="submit">
+        <button type="sports">
+          <span data-testid="sports">
           <i class="bi bi-dribbble"></i>
+          </span>
         </button>
       </a>
       <a href="/food-and-drink">

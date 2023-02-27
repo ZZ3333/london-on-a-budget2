@@ -9,18 +9,6 @@ test ('should render LoginForm email component', () => {
 
 test ('should render LoginForm password component', () => {
     render(<LogInForm/>);
-    const SignUpElement = screen.getByTestId('password');
-    expect(SignUpElement).toBeInTheDocument();
+    const LoginElement = screen.getByTestId('password');
+    expect(LoginElement).toBeInTheDocument();
 })
-
-// test ('should render Signup firstName component', () => {
-//     render(<SignUpForm/>);
-//     const SignUpElement = screen.getByTestId('firstName');
-//     expect(SignUpElement).toBeInTheDocument();
-// })
-
-// test ('should render Signup lastName component', () => {
-//     render(<SignUpForm/>);
-//     const SignUpElement = screen.getByTestId('lastName');
-//     expect(SignUpElement).toBeInTheDocument();
-// })
