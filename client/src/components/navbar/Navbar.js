@@ -17,11 +17,17 @@ const Navbar = () => {
           <button type="submit">
             <i class="login">Login</i>
           </button>
+          <input
+          data-testid="login"
+          />
         </a>
         <a href="/signup-page">
           <button type="submit">
             <i class="signup">Signup</i>
           </button>
+          <input
+          data-testid="signup"
+          />
         </a>
       </div>
     );
