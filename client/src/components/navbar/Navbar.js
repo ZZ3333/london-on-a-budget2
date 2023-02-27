@@ -15,19 +15,18 @@ const Navbar = () => {
       <div align="right">
           <a href="/login-page">
           <button type="submit">
-            <i class="login">Login</i>
+            <span data-testid="login">
+              <i class="login">Login</i>
+            </span>
           </button>
-          <input
-          data-testid="login"
-          />
         </a>
+        
         <a href="/signup-page">
           <button type="submit">
-            <i class="signup">Signup</i>
+            <span data-testid="signup">
+              <i class="signup">Signup</i>
+            </span>
           </button>
-          <input
-          data-testid="signup"
-          />
         </a>
       </div>
     );
