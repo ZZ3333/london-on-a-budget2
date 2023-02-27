@@ -1,16 +1,16 @@
 // navbar on homepage : login and sign up button 
 
-import React, { useState } from "react";
+import React from "react";
 import './Navbar.css';
 
 const Navbar = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+    // const [searchTerm, setSearchTerm] = useState('');
+    // const [searchResults, setSearchResults] = useState([]);
 
-    const handleSignOut = () => {
-      window.localStorage.removeItem("token");
-      window.location.href = "/login";
-    };
+    // const handleSignOut = () => {
+    //   window.localStorage.removeItem("token");
+    //   window.location.href = "/login";
+    // };
       return (
       <div align="right">
           <a href="/login-page">

@@ -11,22 +11,22 @@ import LogInForm from './components/auth/LoginForm';
 
 function App() {
   return (
-    <html>
-      <head>
-        <title>Learn react</title>
-      </head>
-      <body>
+    // <html>
+    //   <head>
+    //     <title>Learn react</title>
+    //   </head>
+    //   <body>
         <div className="landing-page">
+          <Navbar/>
           <h1>London on a Budget</h1>
           <Search />
           <IconsMenu />
           <EventsView />
           <SignUpForm />
           <LogInForm />
-          
         </div>
-      </body>
-    </html>
+    //   </body>
+    // </html>
   );
 }
 
