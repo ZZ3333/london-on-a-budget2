@@ -19,4 +19,3 @@ test ('should render NavBar signup component', () => {
 
 
 
-// test render login navbar component on the page 
