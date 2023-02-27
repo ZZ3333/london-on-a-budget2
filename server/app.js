@@ -1,4 +1,3 @@
-
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -7,13 +6,13 @@ const JWT = require("jsonwebtoken");
 const axios = require("axios");
 const router = express.Router();
 
+const app = express();
+
 const tokensRouter = require("./routes/tokens");
 const usersRouter = require("./routes/users");
 
-const app = express();
-
 // setup for receiving JSON
-app.use(express.json())
+app.use(express.json());
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -21,18 +20,17 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // middleware function to check for valid tokens
 const tokenChecker = (req, res, next) => {
-
   let token;
-  const authHeader = req.get("Authorization")
+  const authHeader = req.get("Authorization");
 
-  if(authHeader) {
-    token = authHeader.slice(7)
+  if (authHeader) {
+    token = authHeader.slice(7);
   }
 
   JWT.verify(token, process.env.JWT_SECRET, (err, payload) => {
-    if(err) {
-      console.log(err)
-      res.status(401).json({message: "auth error"});
+    if (err) {
+      console.log(err);
+      res.status(401).json({ message: "auth error" });
     } else {
       req.user_id = payload.user_id;
       next();
@@ -56,21 +54,10 @@ app.use((err, req, res) => {
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // respond with details of the error
-  res.status(err.status || 500).json({message: 'server error'})
+  res.status(err.status || 500).json({ message: "server error" });
 });
 
-
-// axios
-//   .get(
-//     "https://app.ticketmaster.com/discovery/v2/events?apikey=ENTERKEYHETE&keyword=free&locale=*&city=London&countryCode=GB",
-//   )
-//   .then((response) => {
-//     console.log(response.data);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
-  
-  
 module.exports = app;
+
+
 
