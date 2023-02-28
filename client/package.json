@@ -17,7 +17,8 @@
     "start:test": "MONGODB_URL=mongodb://0.0.0.0/london_budget_test npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "nyc mocha"
   },
   "eslintConfig": {
     "extends": [

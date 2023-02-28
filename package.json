@@ -16,4 +16,8 @@
     "url": "https://github.com/HusnainRashid/london-on-a-budget/issues"
   },
   "homepage": "https://github.com/HusnainRashid/london-on-a-budget#readme"
+
+  "devDependencies": {
+    "c8": "^7.13.0"
+  }
 }
