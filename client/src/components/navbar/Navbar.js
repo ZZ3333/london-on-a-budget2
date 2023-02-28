@@ -32,12 +32,12 @@ const Navbar = () => {
     <div className="navbar">
       <a href="/login">
         <button type="submit">
-          <i class="login">Login</i>
+          <i className="login">Login</i>
         </button>
       </a>
       <a href="/signup">
         <button type="submit">
-          <i class="signup">Signup</i>
+          <i className="signup">Signup</i>
         </button>
       </a>
     </div>
