@@ -1,6 +1,6 @@
 // navbar on homepage : login and sign up button 
 
-import React, { useState } from "react";
+import React from "react";
 import './Navbar.css';
 
 // const Navbar = () => {
