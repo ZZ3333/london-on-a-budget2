@@ -6,7 +6,7 @@ import IconsMenu from './components/IconsMenu/IconsMenu';
 import Navbar from './components/navbar/Navbar';
 import SignUpForm from './components/user/SignUpForm';
 import LogInForm from './components/auth/LoginForm';
-import { UseNavigate, Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
   return (
