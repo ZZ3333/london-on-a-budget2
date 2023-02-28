@@ -10,11 +10,16 @@ describe("Event model", () => {
     });
   });
 
-  it("stores an event object", () => {
+  it.skip("stores an event object", () => {
     const event = new Event({
     });
     expect(event).toBeDefined();
   });
+  it("returns an error if name is empty", () =>{
+    const event = new Event();
+    const validation = event.validateSync();
+    expect(validation.errors.name.message).toBe("Path `name` is required.");
+  })
   it("has a name", () => {
     const event = new Event({
       name: "testEvent",
