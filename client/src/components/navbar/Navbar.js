@@ -16,7 +16,7 @@ const Navbar = () => {
         <a href="/login-page">
         <button type="submit">
           <span data-testid="login">
-            <i class="login">Login</i>
+            <i className="login">Login</i>
           </span>
         </button>
       </a>
@@ -24,7 +24,7 @@ const Navbar = () => {
       <a href="/signup-page">
         <button type="submit">
           <span data-testid="signup">
-            <i class="signup">Signup</i>
+            <i className="signup">Signup</i>
           </span>
         </button>
       </a>

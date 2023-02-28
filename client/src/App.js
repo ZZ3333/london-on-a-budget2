@@ -23,7 +23,6 @@ function App() {
           <SignUpForm />
           <LogInForm />
           <Navbar />
-          
         </div>
       </body>
     </html>
