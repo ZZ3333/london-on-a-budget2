@@ -6,7 +6,7 @@ import IconsMenu from './components/IconsMenu/IconsMenu';
 import Navbar from './components/navbar/Navbar';
 import SignUpForm from './components/user/SignUpForm';
 import LogInForm from './components/auth/LoginForm';
-import { Routes, Route } from "react-router-dom";
+import { UseNavigate, Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
   return (
@@ -14,11 +14,11 @@ function App() {
           <Navbar /> 
             <h1>London on a Budget</h1>
               <Routes>
-                <Route exact path="/" element={<Search />} />
-                <Route exact path="/" element={<IconsMenu />} />
-                <Route exact path="/" element={<EventsView />} />
-                <Route exact path="/signup" element={<SignUpForm />} />
-                <Route exact path="/login" element={<LogInForm />} />
+                <Route path="/" element={<Search />} />
+                <Route path="/" element={<IconsMenu />} />
+                <Route path="/" element={<EventsView />} />
+                <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
+                <Route path="/login" element={<LogInForm navigate={useNavigate()}/>} />
               </Routes>        
         </div>
   );
