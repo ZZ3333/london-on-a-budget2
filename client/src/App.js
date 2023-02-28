@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './index.css';
 import Search from './components/Search/Search';
 import EventsView from './components/EventsView/EventsView';
 import IconsMenu from './components/IconsMenu/IconsMenu';
@@ -16,12 +15,8 @@ import {
 
 function App() {
   return (
-    <html>
-      <head>
-        <title>Learn react</title>
-      </head>
-      <body>
         <div className="landing-page">
+          <Navbar />
           <h1>London on a Budget</h1>
           <Search />
           <IconsMenu />
@@ -30,8 +25,6 @@ function App() {
           <LogInForm />
           
         </div>
-      </body>
-    </html>
   );
 }
 
