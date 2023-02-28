@@ -2,7 +2,7 @@
 
 import React from "react";
 import './Navbar.css';
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 // const Navbar = () => {
     // const [searchTerm, setSearchTerm] = useState('');
@@ -31,16 +31,16 @@ import {Link} from "react-router-dom"
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Link to="/login">
+      <NavLink to="/login">
         <button type="submit">
           <i className="login">Login</i>
         </button>
-      </Link>
-      <Link to ="/signup">
+      </NavLink>
+      <NavLink to ="/signup">
         <button type="submit">
           <i className="signup">Signup</i>
         </button>
-      </Link>
+      </NavLink>
     </div>
   );
 };
