@@ -12,9 +12,9 @@ function App() {
           <Navbar /> 
             <h1>London on a Budget</h1>
               <Routes>
-                <Route exact path="/" element={<Main />} />
-                <Route exact path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
-                <Route exact path="/login" element={<LogInForm navigate={useNavigate()}/>} />
+                <Route path="/" element={<Main />} />
+                <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
+                <Route path="/login" element={<LogInForm navigate={useNavigate()}/>} />
               </Routes>        
         </div>
   );

@@ -5,31 +5,43 @@ const SignUpForm = ({ navigate }) => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [emailError, setEmailError] = useState(false);
+
+  const validateEmail = () => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    fetch("/users", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        firstName: firstName,
-        lastName: lastName,
-      }),
-    }).then((response) => {
-      if (response.status === 201) {
-        console.log("user created successfully");
-        navigate("/login");
-      } else {
-        console.log("user not created");
-        navigate("/signup");
+    if (validateEmail()) {
+      setEmailError(false);
+      fetch("/users", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          firstName: firstName,
+          lastName: lastName,
+        }),
+      }).then((response) => {
+        if (response.status === 201) {
+          navigate("/login");
+        } else {
+          navigate("/signup");
+        }
+      })}
+      else {
+        setEmailError(true); 
       }
-    });
   };
 
   const handleEmailChange = (event) => {
@@ -64,6 +76,9 @@ const SignUpForm = ({ navigate }) => {
         type="password"
         value={password}
         onChange={handlePasswordChange}
+        required
+        minLength={8}
+        maxLength={20}
       />
       <input
         placeholder="First Name"
@@ -71,6 +86,8 @@ const SignUpForm = ({ navigate }) => {
         type="text"
         value={firstName}
         onChange={handleFirstNameChange}
+        required
+        minLength={2}
       />
       <input
         placeholder="Last Name"
@@ -78,6 +95,8 @@ const SignUpForm = ({ navigate }) => {
         type="text"
         value={lastName}
         onChange={handleLastNameChange}
+        required
+        minLength={2}
       />
 
       <input id="submit" type="submit" value="Submit" />
