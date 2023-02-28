@@ -13,14 +13,14 @@ const Navbar = () => {
     };
       return (
       <div align="right">
-          <a href="/login-page">
+          <a href="/login">
           <button type="submit">
-            <i class="login">Login</i>
+            <i className="login">Login</i>
           </button>
         </a>
-        <a href="/signup-page">
+        <a href="/signup">
           <button type="submit">
-            <i class="signup">Signup</i>
+            <i className="signup">Signup</i>
           </button>
         </a>
       </div>
