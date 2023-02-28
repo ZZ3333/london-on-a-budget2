@@ -12,18 +12,18 @@ const Navbar = () => {
       window.location.href = "/login";
     };
       return (
-      <div align="right">
-          <a href="/login">
-          <button type="submit">
-            <i className="login">Login</i>
-          </button>
-        </a>
-        <a href="/signup">
-          <button type="submit">
-            <i className="signup">Signup</i>
-          </button>
-        </a>
-      </div>
+        <div align="right">
+            <a href="/login">
+            <button type="submit">
+              <i className="login">Login</i>
+            </button>
+          </a>
+          <a href="/signup">
+            <button type="submit">
+              <i className="signup">Signup</i>
+            </button>
+          </a>
+        </div>
     );
 };
 
