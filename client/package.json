@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "proxy": "http://localhost:8080"
+    "proxy": "http://localhost:8080",
+    "coverage": "nyc mocha"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +41,8 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nyc": "^15.1.0"
+  }
 }

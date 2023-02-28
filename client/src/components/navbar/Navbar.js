@@ -4,6 +4,7 @@ import React from "react";
 import './Navbar.css';
 
 const Navbar = () => {
+
     // const [searchTerm, setSearchTerm] = useState('');
     // const [searchResults, setSearchResults] = useState([]);
 
@@ -13,12 +14,12 @@ const Navbar = () => {
     // };
       return (
       <div align="right">
-          <a href="/login-page">
+          <a href="/login">
           <button type="submit">
             <i class="login">Login</i>
           </button>
         </a>
-        <a href="/signup-page">
+        <a href="/signup">
           <button type="submit">
             <i class="signup">Signup</i>
           </button>
