@@ -11,7 +11,7 @@ import LogInForm from './components/auth/LoginForm';
 function App() {
   return (
         <div className="landing-page">
-          <Navbar/>
+          <Navbar />
           <h1>London on a Budget</h1>
           <Search />
           <IconsMenu />
