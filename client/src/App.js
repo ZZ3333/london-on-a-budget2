@@ -17,6 +17,7 @@ function App() {
       </head>
       <body>
         <div className="landing-page">
+          <Navbar />
           <h1>London on a Budget</h1>
           <Search />
           <IconsMenu />
