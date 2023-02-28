@@ -4,7 +4,7 @@ import Main from './components/main/Main';
 import Navbar from './components/navbar/Navbar';
 import SignUpForm from './components/user/SignUpForm';
 import LogInForm from './components/auth/LoginForm';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
             <h1>London on a Budget</h1>
               <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
-                <Route path="/login" element={<LogInForm navigate={useNavigate()}/>} />
+                <Route path="/signup" element={<SignUpForm />} />
+                <Route path="/login" element={<LogInForm />} />
               </Routes>        
         </div>
   );
