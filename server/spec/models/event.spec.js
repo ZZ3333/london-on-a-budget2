@@ -9,12 +9,6 @@ describe("Event model", () => {
       done();
     });
   });
-
-  it.skip("stores an event object", () => {
-    const event = new Event({
-    });
-    expect(event).toBeDefined();
-  });
   it("returns an error if name is empty", () =>{
     const event = new Event();
     const validation = event.validateSync();
@@ -27,6 +21,11 @@ describe("Event model", () => {
     expect(event.name).toBeDefined();
     expect(event.name).toEqual("testEvent");
     expect(typeof event.name).toBe("string");
+  });
+   it("removes whitespace from an event name string", () =>{
+    const event = new Event({name: "     test event     "});
+    const validation = event.validateSync();
+    expect(event.name).toBe("test event");
   });
   it("has a description", () => {
     const event = new Event({
