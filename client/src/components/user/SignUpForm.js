@@ -23,8 +23,10 @@ const SignUpForm = ({ navigate }) => {
       }),
     }).then((response) => {
       if (response.status === 201) {
+        console.log("user created successfully");
         navigate("/login");
       } else {
+        console.log("user not created");
         navigate("/signup");
       }
     });
