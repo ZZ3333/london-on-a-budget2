@@ -1,6 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import Navbar from "../navbar/Navbar";
 
+afterEach(() => {
+    cleanup();
+});
 
 test ('should render NavBar login component', () => {
     render(<Navbar/>);

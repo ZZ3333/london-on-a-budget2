@@ -1,6 +1,10 @@
 import {render, screen } from '@testing-library/react'
 import SignUpForm from '../user/SignUpForm'
 
+afterEach(() => {
+    cleanup();
+});
+
 test ('should render Signup email component', () => {
     render(<SignUpForm/>);
     const SignUpElement = screen.getByTestId('email');

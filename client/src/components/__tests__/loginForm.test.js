@@ -1,6 +1,10 @@
 import {render, screen } from '@testing-library/react'
 import LogInForm from '../auth/LoginForm';
 
+afterEach(() => {
+    cleanup();
+});
+
 test ('should render LoginForm email component', () => {
     render(<LogInForm />);
     const LoginElement = screen.getByTestId('email');
