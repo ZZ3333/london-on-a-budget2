@@ -4,12 +4,11 @@ const path = require("path");
 const logger = require("morgan");
 const JWT = require("jsonwebtoken");
 const axios = require("axios");
-const router = express.Router();
-
-const app = express();
-
+// const router = express.Router();
 const tokensRouter = require("./routes/tokens");
 const usersRouter = require("./routes/users");
+
+const app = express();
 
 // setup for receiving JSON
 app.use(express.json());
