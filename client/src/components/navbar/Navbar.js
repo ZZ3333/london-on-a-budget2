@@ -6,12 +6,12 @@ const Navbar = () => {
     <div className="navbar">
       <a href="/login">
         <button type="submit">
-          <i class="login">Login</i>
+          Login
         </button>
       </a>
       <a href="/signup">
         <button type="submit">
-          <i class="signup">Signup</i>
+          Signup
         </button>
       </a>
     </div>
