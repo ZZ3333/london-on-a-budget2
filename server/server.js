@@ -26,9 +26,9 @@ const eventSchema = new mongoose.Schema({
   price: Number
 });
 
-const Event = mongoose.model("Event", eventSchema);
+const ApiEvent = mongoose.model("ApiEvent", eventSchema);
 
-app.get("/events", async (req,res) => {
+app.get("/api/events", async (req,res) => {
  try{
   const response = await axios.get(
     "https://app.ticketmaster.com/discovery/v2/events.json?apikey=rmiukm4AAeGFtQ2ptdf0HcMLRGLdOGnb&size=12&include=priceRanges"
@@ -39,7 +39,7 @@ app.get("/events", async (req,res) => {
   events.forEach(async (event) =>{
     const newEvent = new Event({
       name: event.name,
-      price: event.price
+      price: event
     });
 
     try {
