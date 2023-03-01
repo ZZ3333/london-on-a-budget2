@@ -9,16 +9,22 @@ const handleLogOut = () => {
   window.location.href = "/login";
 };
 
-const token = window.localStorage.getItem("token");
+
 
 const Navbar = () => {
+  
+  const token = window.localStorage.getItem("token");
+
   if (token) {
     return (
-      <NavLink to="/login">
-        <button onClick={handleLogOut} className="logout">
-          <i data-testid="logout" className="logout">Log out</i>
-        </button>
+      <div className="navbar">
+         <NavLink to="/login">
+            <button onClick={handleLogOut} className="logout">
+              <i data-testid="logout" className="logout">Log out</i>
+            </button>
       </NavLink>
+      </div>
+     
     )
   } else {
     return (
