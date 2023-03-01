@@ -2,39 +2,64 @@ const mongoose = require("mongoose");
 
 
 const EventSchema = new mongoose.Schema({
-      name: { 
+      name: {
         type: String,
-        required: true, 
+        required: true,
         trim: true
-        
       },
-      description: {
+      ticketmasterId: {
+        type: String,
+        required: true,
+        unique: true
+      },
+      url: {
+        type: String,
+        required: true
+      },
+      postCode:{
+        type: String,
+        required: true
+      }, 
+      geoPoint: {
+        type: [Number],
+        required: true
+      },
+      venueId:{
         type: String
       },
-      genre: {
+      venueAddress:{
+        type: String,
+        required: true
+      },
+      description:{
+        type: String, 
+        required: true
+      },
+      genre:{
+        type: String,
+        required: true
+      },
+      subgenre:{
         type: String
       },
-      URL: {
+      accessibility:{
+        type: String 
+      },
+      isFamilyFriendly:{
+        type: String, 
+        enum: ["yes", "no", "none"]
+      },
+      ageRestricted:{
         type: String
       },
-      image: {
-        type: String
-      },
-      startDateTime: { 
-        type: Date
-      },
-      postcode: {
-        type: String
-      },
-      addressLine: {
-        type: String
-      },
-      price: {
-        type: Number
-      },
-      legalAgeRestriction: {
-        type: Boolean
-      }
+      images:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Image'
+      }],
+      priceRanges: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'PriceRange'
+      }],   
     })
 
 
