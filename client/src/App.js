@@ -1,24 +1,23 @@
 import React from 'react';
 import './App.css';
-import Search from './components/Search/Search';
-import EventsView from './components/EventsView/EventsView';
-import IconsMenu from './components/IconsMenu/IconsMenu';
+import Main from './components/main/Main';
+import './components/Search/Search.css';
 import Navbar from './components/navbar/Navbar';
 import SignUpForm from './components/user/SignUpForm';
 import LogInForm from './components/auth/LoginForm';
 import { Routes, Route, useNavigate } from "react-router-dom";
 
+
 function App() {
   return (
         <div className="landing-page">
+
           <Navbar /> 
             <h1>London on a Budget</h1>
               <Routes>
-                <Route path="/" element={<Search />} />
-                <Route path="/" element={<IconsMenu />} />
-                <Route path="/" element={<EventsView />} />
-                <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
-                <Route path="/login" element={<LogInForm navigate={useNavigate()}/>} />
+                <Route exact path="/" element={<Main />} />
+                <Route exact path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
+                <Route exact path="/login" element={<LogInForm navigate={useNavigate()}/>} />
               </Routes>        
         </div>
   );

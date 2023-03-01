@@ -2,48 +2,23 @@
 
 import React from "react";
 import './Navbar.css';
-
-// const Navbar = () => {
-    // const [searchTerm, setSearchTerm] = useState('');
-    // const [searchResults, setSearchResults] = useState([]);
-
-    // const handleSignOut = () => {
-    //   window.localStorage.removeItem("token");
-    //   window.location.href = "/login";
-    // };
-//       return (
-//       <div align="right">
-//           <a href="/login-page">
-//           <button type="submit">
-//             <i class="login">Login</i>
-//           </button>
-//         </a>
-//         <a href="/signup-page">
-//           <button type="submit">
-//             <i class="signup">Signup</i>
-//           </button>
-//         </a>
-//       </div>
-//     );
-// };
+import {NavLink} from "react-router-dom"
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <a href="/login">
+      <NavLink to="/login">
         <button type="submit">
-          <i class="login">Login</i>
+          <i data-testid="login" className="login">Login</i>
         </button>
-      </a>
-      <a href="/signup">
+      </NavLink>
+      <NavLink to ="/signup">
         <button type="submit">
-          <i class="signup">Signup</i>
+          <i data-testid="signup" className="signup">Signup</i>
         </button>
-      </a>
+      </NavLink>
     </div>
   );
 };
-
-
 
 export default Navbar;
