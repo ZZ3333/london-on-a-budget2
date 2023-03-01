@@ -34,8 +34,11 @@ const Search = () => {
             <option value="20-40">£20 - £40</option>
             <option value="40-60">£40 - £60</option>
             <option value="60">£60+</option>
+            <input type="range"></input>
+            <input type="datetime-local"></input>
           </select>
           <button type="submit" data-testid="search-btn"className="search-btn">Search</button>
+          <input type="button" onclick="alert('Hello World!')" value="Click Me!"></input>
         </div>
       </div>
   );
