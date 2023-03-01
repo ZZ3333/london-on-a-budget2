@@ -1,5 +1,6 @@
-import { render, screen} from '@testing-library/react'
+import { render, screen, fireEvent} from '@testing-library/react'
 import Search from '../Search/Search';
+
 
 test('should render search component', () => {
     render(<Search/>);
@@ -30,3 +31,20 @@ test('should render search button element', () => {
     const SearchElement = screen.getByTestId('search-btn');
     expect(SearchElement).toBeInTheDocument();
 });
+
+test('should find user location on button click', async () => {
+    const getCurrentPosition = jest.fn();
+  
+    global.navigator.geolocation = {
+      getCurrentPosition,
+    };
+  
+    render(<Search />);
+  
+    const findLocationButton = screen.getByText('Find my location');
+  
+    fireEvent.click(findLocationButton);
+  
+    expect(getCurrentPosition).toHaveBeenCalledTimes(1);
+  });
+  

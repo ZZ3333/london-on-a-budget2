@@ -8,14 +8,10 @@ import IconsMenu from './components/IconsMenu/IconsMenu';
 import Navbar from './components/navbar/Navbar';
 import SignUpForm from './components/user/SignUpForm';
 import LogInForm from './components/auth/LoginForm';
+// import slider from './components/search/price_range_slider/slider.css'
 
 function App() {
   return (
-    <html>
-      <head>
-        <title>Learn react</title>
-      </head>
-      <body>
         <div className="landing-page">
           <Navbar />
           <h1>London on a Budget</h1>
@@ -24,10 +20,9 @@ function App() {
           <EventsView />
           <SignUpForm />
           <LogInForm />
-          
+          <title>Learn react</title>
         </div>
-      </body>
-    </html>
+  
   );
 }
 
