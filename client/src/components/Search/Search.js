@@ -3,7 +3,6 @@ import './Search.css';
 
 const Search = () => {
   return (
-  
         <div className="search-bar" data-testid="search">
           <div className="search-column">
             <label htmlFor="location">Location:</label>
@@ -28,8 +27,9 @@ const Search = () => {
           </div>
           <button type="submit" data-testid="search-btn"className="search-btn">Search</button>
         </div>
-   
   );
 };
 
 export default Search;
+
+{/* <input role='submit-button' data-testid='submit' type="submit" value="Submit" /> */}

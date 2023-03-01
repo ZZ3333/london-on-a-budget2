@@ -32,7 +32,6 @@ const EventSchema = new mongoose.Schema({
       legalAgeRestriction: {
         type: Boolean
       }
-
     })
 
 
