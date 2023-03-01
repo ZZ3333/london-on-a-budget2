@@ -3,7 +3,7 @@ const APIEvent = require('../../models/api_event');
 
 describe('APIEvent model', () => {
   beforeAll(async () => {
-    await mongoose.connect('mongodb://localhost/testdb', { useNewUrlParser: true });
+    await mongoose.connect('mongodb://localhost/london_budget_test', { useNewUrlParser: true });
   });
 
   afterEach(async () => {

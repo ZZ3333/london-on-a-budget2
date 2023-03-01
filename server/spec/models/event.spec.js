@@ -24,6 +24,10 @@ it('saves an event to the database', async () => {
     accessibility: 'Wheelchair access',
     isFamilyFriendly: 'no',
     ageRestricted: 'No',
+    priceRange:{
+      min: 10,
+      max: 20
+    }
     });
     const savedEvent = await event.save();
     expect(savedEvent._id).toBeDefined();
@@ -32,7 +36,6 @@ it('saves an event to the database', async () => {
 })
 it('cannot save an event without a name', async () => {
   const event = new Event({
-    name: 'test',
     ticketmasterId: 'tm123456',
     url: 'www.testevent.com', 
     postCode: 'SW1 1AA',
@@ -45,6 +48,10 @@ it('cannot save an event without a name', async () => {
     accessibility: 'Wheelchair access',
     isFamilyFriendly: 'no',
     ageRestricted: 'No',
+    priceRange: {
+      min: 10,
+      max: 20
+    }
     });
     let err;
     try{

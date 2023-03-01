@@ -56,9 +56,16 @@ const EventSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image'
       }],
-      priceRanges: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'PriceRange'
+      priceRange: [{
+        min: {
+          type: Number, 
+          required: true
+        },
+        max: {
+          type: Number, 
+          required: true
+        },
+        
       }],   
     })
 
