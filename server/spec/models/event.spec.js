@@ -29,7 +29,31 @@ it('saves an event to the database', async () => {
     expect(savedEvent._id).toBeDefined();
     expect(savedEvent.name).toBe('test');
 });
-
-
 })
+it('cannot save an event without a name', async () => {
+  const event = new Event({
+    name: 'test',
+    ticketmasterId: 'tm123456',
+    url: 'www.testevent.com', 
+    postCode: 'SW1 1AA',
+    geoPoint: [0,0],
+    venueId: 'v1234',
+    venueAddress: '123 Testing place',
+    description: 'This is an event',
+    genre: 'Tragic',
+    subgenre: 'Tech',
+    accessibility: 'Wheelchair access',
+    isFamilyFriendly: 'no',
+    ageRestricted: 'No',
+    });
+    let err;
+    try{
+       const savedEvent = await event.save();   
+    } catch (error){
+      err = error;
+    }
+   
+    expect(err['name']).toBeDefined();
+
+});
 
