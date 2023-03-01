@@ -7,8 +7,16 @@ const axios = require("axios");
 // const router = express.Router();
 const tokensRouter = require("./routes/tokens");
 const usersRouter = require("./routes/users");
+const apiEventsRouter = require("./routes/api_events");
 
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
+app.use(express.json());
+
+app.use("/api/events", apiEventsRouter);
+
 
 // setup for receiving JSON
 app.use(express.json());
