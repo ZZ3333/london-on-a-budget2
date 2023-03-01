@@ -1,5 +1,9 @@
-import { render, screen, fireEvent} from '@testing-library/react'
+import { render, screen, cleanup, fireEvent } from '@testing-library/react'
 import Search from '../Search/Search';
+
+afterEach(() => {
+    cleanup();
+});
 
 
 test('should render search component', () => {
