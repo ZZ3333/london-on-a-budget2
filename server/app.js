@@ -15,7 +15,6 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/events", apiEventsRouter);
 
 
 // setup for receiving JSON
@@ -48,6 +47,8 @@ const tokenChecker = (req, res, next) => {
 // route setup
 app.use("/tokens", tokensRouter);
 app.use("/users", usersRouter);
+app.use("/api/events", apiEventsRouter);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -63,6 +64,17 @@ app.use((err, req, res) => {
   // respond with details of the error
   res.status(err.status || 500).json({ message: "server error" });
 });
+
+app.get("/events", async (req, res) =>{
+  try {
+    const events = await Event.find();
+    res.json(events);
+  }catch (error){
+    console.log(error);
+    res.status(500).send("Internal server error")
+  }
+})
+
 
 module.exports = app;
 
