@@ -12,16 +12,19 @@ const LogInForm = ({ navigate }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: email, password: password })
+      body: JSON.stringify({email: email, password: password})
     })
+
 
     if(response.status !== 201) {
       console.log("login unsuccessful")
       navigate('/login')
     } else {
       console.log("login successful")
-      let data = await response.json()
-      window.localStorage.setItem("token", data.token)
+      let data = await response.json();
+      window.localStorage.setItem("token", data.token);
+      console.log(data)
+      window.localStorage.setItem("user", data.user);
       navigate('/');
     }
   }
