@@ -15,28 +15,46 @@ const Navbar = () => {
 
   if (token) {
     return (
-      <div className="navbar">
-         <NavLink to="/login">
-            <button onClick={handleLogOut} className="logout">
-              <i data-testid="logout" className="logout">Log out</i>
-            </button>
-      </NavLink>
+      <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="container-fluid">
+            <NavLink className="navbar-brand" to="/">
+              Dealscover London
+            </NavLink>
+           
+            <NavLink to="/login">
+              <button onClick={handleLogOut} className="btn btn-outline-secondary">
+                <i data-testid="logout" className="logout">
+                  Log out
+                </i>
+              </button>
+            </NavLink>
+          </div>
+        </nav>
       </div>
-     
-    )
+    );
   } else {
     return (
-      <div className="navbar">
-        <NavLink to="/login">
-          <button type="submit">
-            <i data-testid="login" className="login">Log in</i>
-          </button>
-        </NavLink>
-        <NavLink to ="/signup">
-          <button type="submit">
-            <i data-testid="signup" className="signup">Sign up</i>
-          </button>
-        </NavLink>
+      <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="/">
+              Dealscover London
+            </a>
+            <NavLink to="/login">
+              <button
+                type="submit"
+                className="btn btn-outline-secondary"
+                data-testid="login">
+                 Log in
+              </button>
+            </NavLink>
+            <NavLink to="/signup">
+              <button type="submit" className="btn btn-outline-dark" data-testid="signup">Sign Up
+              </button>
+            </NavLink>
+          </div>
+        </nav>
       </div>
     );
   }
