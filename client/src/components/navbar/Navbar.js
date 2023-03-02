@@ -1,53 +1,45 @@
 import React from "react";
-import "./Navbar.css";
+import './Navbar.css';
+import {NavLink} from "react-router-dom"
+
+const handleLogOut = () => {
+  window.localStorage.removeItem("token");
+  window.location.href = "/login";
+};
+
+
 
 const Navbar = () => {
-  return (
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
-            Navbar
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+  
+  const token = window.localStorage.getItem("token");
+
+  if (token) {
+    return (
+      <div className="navbar">
+         <NavLink to="/login">
+            <button onClick={handleLogOut} className="logout">
+              <i data-testid="logout" className="logout">Log out</i>
+            </button>
+      </NavLink>
+      </div>
+     
+    )
+  } else {
+    return (
+      <div className="navbar">
+        <NavLink to="/login">
+          <button type="submit">
+            <i data-testid="login" className="login">Log in</i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">
-                  Link
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link disabled"
-                  href="/"
-                  tabindex="-1"
-                  aria-disabled="true"
-                >
-                  Disabled
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
+        </NavLink>
+        <NavLink to ="/signup">
+          <button type="submit">
+            <i data-testid="signup" className="signup">Sign up</i>
+          </button>
+        </NavLink>
+      </div>
+    );
+  }
 };
 
 export default Navbar;
