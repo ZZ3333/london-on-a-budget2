@@ -15,7 +15,6 @@ const LogInForm = ({ navigate }) => {
       body: JSON.stringify({email: email, password: password})
     })
 
-
     if(response.status !== 201) {
       console.log("login unsuccessful")
       navigate('/login')
@@ -37,15 +36,66 @@ const LogInForm = ({ navigate }) => {
     setPassword(event.target.value)
   }
 
-
     return (
-      <form onSubmit={handleSubmit}>
-        <input placeholder='Email' data-testid="email" type='text' value={ email } onChange={handleEmailChange} />
-        <input placeholder='Password' data-testid="password" type='password' value={ password } onChange={handlePasswordChange} required
-                minLength={8}/>
-        <input role='submit-button' data-testid='submit' type="submit" value="Submit" />
-      </form>
+      <div className="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div className="row align-items-center g-lg-5 py-5">
+          <div className="col-lg-7 text-center text-lg-start">
+            <h1 className="display-4 fw-bold lh-1 mb-3">Jump Back In</h1>
+            <p className="col-lg-10 fs-4">
+              Additional Text to direct and prompt user to log back in to view
+              and book tickets
+            </p>
+          </div>
+          <div className="col-md-10 mx-auto col-lg-5">
+            <form
+              className="p-4 p-md-5 border rounded-3 bg-light"
+              onSubmit={handleSubmit}
+            >
+              <div className="form-floating mb-3">
+                <input
+                  className="form-control"
+                  placeholder="Email"
+                  data-testid="email"
+                  type="text"
+                  value={email}
+                  onChange={handleEmailChange}
+                  id="floatingInputEmail"
+                />
+
+                <label for="floatingInputEmail">Email Address</label>
+              </div>
+
+              <div className="form-floating mb-3">
+                <input
+                  className="form-control"
+                  placeholder="Password"
+                  data-testid="password"
+                  type="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  required
+                  minLength={8}
+                  id="floatingInputPassword"
+                />
+                <label for="floatingInputPassword">Password</label>
+              </div>
+              <button
+                className="w-100 btn btn-lg btn-dark"
+                type="submit"
+                value="Submit"
+                role="submit-button"
+                data-testid="submit"
+              >
+                Sign In
+              </button>
+              <hr className="my-4"></hr>
+              <small className="text-muted">Dealscover London</small>
+            </form>
+          </div>
+        </div>
+      </div>
     );
 }
+
 
 export default LogInForm;
