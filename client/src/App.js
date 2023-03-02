@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar';
 import SignUpForm from './components/user/SignUpForm';
 import LogInForm from './components/auth/LoginForm';
 import { Routes, Route, useNavigate } from "react-router-dom";
+import Search from './components/Search/Search';
 
 
 function App() {

@@ -8,13 +8,13 @@ afterEach(() => {
 
 test('should render search component', () => {
     render(<Search/>);
-    const SearchElement = screen.getByTestId('search');
+    const SearchElement = screen.getByTestId('search-btn');
     expect(SearchElement).toBeInTheDocument();
 });
 
 test('should render price element', () => {
     render(<Search/>);
-    const SearchElement = screen.getByTestId('price');
+    const SearchElement = screen.getByTestId('pi_input');
     expect(SearchElement).toBeInTheDocument();
 });
 
@@ -45,7 +45,7 @@ test('should find user location on button click', async () => {
   
     render(<Search />);
   
-    const findLocationButton = screen.getByText('Find my location');
+    const findLocationButton = screen.getByRole('button', { name: 'Find my Location' });
   
     fireEvent.click(findLocationButton);
   

@@ -195,3 +195,26 @@ input[type="text"]:focus{
   .price-label {
     font-size: 0.8rem;
   }
+
+  label {
+    display: block;
+  }
+  /* #value:before {
+    content: "Value: ";
+  } */
+  #value {
+    display: inline;
+  }
+  #value:before {
+    display: inline;
+    content: "£";
+  }
+  #value.hide-label:before {
+    display: none;
+  }
+
+  .slider {
+    width: 200px;
+  }
+  
+  
