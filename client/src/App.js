@@ -10,6 +10,7 @@ import Search from './components/Search/Search';
 
 
 function App() {
+
   return (
         <div className="landing-page">
 
