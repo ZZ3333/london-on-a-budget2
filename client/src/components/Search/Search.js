@@ -139,7 +139,7 @@ const Search = () => {
   };
   
   return (
-  <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'row' }}>
   <label htmlFor="location">Location:</label>
   <input type="text" data-testid="location" placeholder="Enter your postcode" />
   <button type="button" className="search-btn" onClick={handleLocationSearch}>
@@ -150,13 +150,13 @@ const Search = () => {
   <input type="date" data-testid="date" name="date" />
 
   <label htmlFor="price">Price: </label>
-  <input type="range" data-testid="pi_input" min="0" max="100" step="0.25" style={{ width: '200px' }} onChange={handleInputChange} />
   <output id="value"></output>
+  <input type="range" data-testid="pi_input" min="0" max="100" step="0.25" style={{ width: '200px' }} onChange={handleInputChange} />
+
  
 
   <button type="submit" data-testid="search-btn" className="search-btn">Search</button>
 </form>
-
 
   );
 };
