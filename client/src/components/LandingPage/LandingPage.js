@@ -7,6 +7,7 @@ const LandingPage = () => {
 
   return (
     <main>
+      <Navbar />
       <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom">
           <a
