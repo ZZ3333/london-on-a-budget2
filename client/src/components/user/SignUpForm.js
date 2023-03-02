@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './SignUpForm.css';
 
 const SignUpForm = ({ navigate }) => {
   const [email, setEmail] = useState("");
@@ -50,38 +51,47 @@ const SignUpForm = ({ navigate }) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        placeholder="Email"
-        data-testid="email"
-        type="text"
-        value={email}
-        onChange={handleEmailChange}
-      />
-      <input
-        placeholder="Password"
-        data-testid="password"
-        type="password"
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <input
-        placeholder="First Name"
-        data-testid="firstName"
-        type="text"
-        value={firstName}
-        onChange={handleFirstNameChange}
-      />
-      <input
-        placeholder="Last Name"
-        data-testid="lastName"
-        type="text"
-        value={lastName}
-        onChange={handleLastNameChange}
-      />
-
-      <input id="submit" type="submit" value="Submit" />
-    </form>
+    <div className="register">
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            placeholder="Email"
+            data-testid="email"
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+            className="form-control"
+          />
+          <input
+            placeholder="Password"
+            data-testid="password"
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            className="form-control"
+          />
+          <input
+            placeholder="First Name"
+            data-testid="firstName"
+            type="text"
+            value={firstName}
+            onChange={handleFirstNameChange}
+            className="form-control"
+          />
+          <input
+            placeholder="Last Name"
+            data-testid="lastName"
+            type="text"
+            value={lastName}
+            onChange={handleLastNameChange}
+            className="form-control"
+          />
+          <button type="submit" class="btn btn-dark" value="Submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
