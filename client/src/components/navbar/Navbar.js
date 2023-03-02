@@ -1,5 +1,3 @@
-// navbar on homepage : login and sign up button 
-
 import React from "react";
 import './Navbar.css';
 import {NavLink} from "react-router-dom"

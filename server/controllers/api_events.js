@@ -36,23 +36,19 @@ const APIEventsController = {
   },
   Update: async () => {
     try {
-      // get all un-iterated API events
       const unIteratedEvents = await APIEvent.find({ iterated: false });
       
-      // loop over each event
       for (const apiEvent of unIteratedEvents) {
         // mark the event as iterated
         apiEvent.iterated = true;
         apiEvent.lastIterated = new Date();
         await apiEvent.save();
         
-        // perform a GET request to the Ticketmaster API
         const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events/${apiEvent.ticketMasterId}?apikey=rmiukm4AAeGFtQ2ptdf0HcMLRGLdOGnb&locale=*`);
         
-        // extract the event data from the response
         const eventData = response.data;
         
-        // create a new Event instance from the event data
+    
         const newEvent = new Event({
           name: eventData.name,
           ticketmasterId: eventData.id,
@@ -71,10 +67,8 @@ const APIEventsController = {
           priceRange: eventData.priceRanges ? eventData.priceRanges.map(range => ({ min: range.min, max: range.max })) : []
         });
         
-        // save the new Event instance
         await newEvent.save();
         
-        // update the API event with the ID of the newly-created Event instance
         apiEvent.eventId = newEvent._id;
         await apiEvent.save();
         

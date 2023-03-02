@@ -1,29 +1,28 @@
-import React from 'react';
+import React from "react";
+
 import './App.css';
-import Main from './components/main/Main';
-import './components/Search/Search.css';
-import Navbar from './components/navbar/Navbar';
+import Gallery from './components/Gallery/Gallery';
 import SignUpForm from './components/user/SignUpForm';
 import LogInForm from './components/auth/LoginForm';
+import EventView from './components/EventView/EventView';
+import LandingPage from './components/LandingPage/LandingPage';
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Search from './components/Search/Search';
 
 
 function App() {
 
   return (
-        <div className="landing-page">
+    <div className="container-fluid">
 
-          <Navbar /> 
-            <h1>London on a Budget</h1>
-              <Routes>
-                <Route exact path="/" element={<Main />} />
-                <Route exact path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
-                <Route exact path="/login" element={<LogInForm navigate={useNavigate()}/>} />
-              </Routes>        
-        </div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/signup" element={<SignUpForm navigate={useNavigate()}/>} />
+        <Route path="/login" element={<LogInForm navigate={useNavigate()} />} />
+        <Route path="/event/:id" element={<EventView />} />
+      </Routes>
+    </div>
   );
 }
-
 
 export default App;
